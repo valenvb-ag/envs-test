@@ -2,8 +2,11 @@ on: push
 
 jobs:
   windows:
-    runs-on: codebuild-core-GHA-test-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on:
+      - codebuild-core-GHA-test-${{ github.run_id }}-${{ github.run_attempt }}
+      - image:custom-windows-712293748738.dkr.ecr.us-east-2.amazonaws.com/rust-ci@sha256:62737fb0059c8767b1f4a6b3ee885589921c9183d9ae77ea1b3cf556bd871ce9
     steps:
+      - uses: actions/checkout@v4
       - run: cargo clippy
         shell: bash
       - run: which cargo
