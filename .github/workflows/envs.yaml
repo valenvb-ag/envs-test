@@ -1,17 +1,11 @@
 on: push
 
+env:
+  IS_NULL: ${{ null }}
+  IS_EMPTY: ""
+
 jobs:
-  deploy-env:
-    runs-on: ubuntu-latest
-    environment: test
-    steps:
-      - run: echo "Hello World"
-  other-deploy-same-env:
-    runs-on: ubuntu-latest
-    environment: test
-    steps:
-      - run: echo "Hello World"
-  deploy-envless:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World"
+      - run: env
