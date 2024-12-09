@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+
+jobs:
+  read:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env
+      - run: printf ${{ toJSON(github) }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: world.txt
+      - run: cat world.txt

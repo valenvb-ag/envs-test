@@ -9,3 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: env
+      - run: echo "hello" > world.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          path: world.txt
+          name: world.txt
+  release:
+    needs: [test]
+    uses: ./.github/workflows/sub1.yaml
