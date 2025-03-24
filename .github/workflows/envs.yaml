@@ -1,12 +1,8 @@
 on: push
 
-env:
-  IS_NULL: ${{ null }}
-  IS_EMPTY: ""
-
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-set
     steps:
       - run: env
       - run: echo "hello" > world.txt
@@ -14,6 +10,4 @@ jobs:
         with:
           path: world.txt
           name: world.txt
-  release:
-    needs: [test]
-    uses: ./.github/workflows/sub1.yaml
+
