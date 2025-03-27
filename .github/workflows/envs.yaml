@@ -4,7 +4,7 @@ jobs:
   test:
     runs-on: scale-set-k8s
     container:
-      image: alpine:latest
+      image: public.ecr.aws/docker/library/alpine:latest
     steps:
       - run: env
       - run: cat /etc/release || true
