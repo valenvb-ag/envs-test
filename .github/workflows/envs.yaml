@@ -4,7 +4,7 @@ jobs:
   test:
     runs-on: scale-set-k8s
     container:
-      image: alpine:latest
+      image: ubuntu:latest
     steps:
       - run: env
       - run: echo "hello" > world.txt
