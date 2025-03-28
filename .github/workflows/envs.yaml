@@ -3,6 +3,8 @@ on: push
 jobs:
   test:
     runs-on: scale-set-k8s
+    container:
+      image: alpine:latest
     steps:
       - run: env
       - run: echo "hello" > world.txt
