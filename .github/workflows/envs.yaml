@@ -2,13 +2,14 @@ on: push
 
 jobs:
   test:
-    runs-on: scale-set-k8s
+    runs-on: arc-runner-set
     container:
-      image: registry.1password.io/dev/build-release/docker/node-slim:1.0.0
+      image: alpine:latest
     steps:
       - run: env
       - run: cat /etc/release || true
       - run: echo "hello" > world.txt
+      - run: sleep 5000
       # - uses: actions/upload-artifact@v4
       #   with:
       #     path: world.txt
