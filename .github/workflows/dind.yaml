@@ -7,5 +7,8 @@ jobs:
       image: ubuntu:latest
     steps:
       - run: env
-      - run: echo "hello" > world.txt
-      - run: sleep 5000
+      - run: apt-get update
+      - run: apt-get install -y curl jq
+      - run: curl https://reqres.in/api/users/ | jq
+      - run: sleep 120
+      - run: echo "BYEEE!!!!"
