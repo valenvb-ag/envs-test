@@ -1,0 +1,11 @@
+on: push
+
+jobs:
+  test:
+    runs-on: scale-set-k8s-dind
+    container:
+      image: ubuntu:latest
+    steps:
+      - run: env
+      - run: echo "hello" > world.txt
+      - run: sleep 5000
