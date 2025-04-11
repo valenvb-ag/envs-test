@@ -10,5 +10,5 @@ jobs:
       - run: apt-get update
       - run: apt-get install -y curl jq
       - run: curl https://reqres.in/api/users/ | jq
-      - run: sleep 30
+      - run: sleep 300
       - run: echo "BYEEE!!!!"
