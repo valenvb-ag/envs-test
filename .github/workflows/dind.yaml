@@ -5,6 +5,9 @@ jobs:
     runs-on: scale-set-k8s-dind
     container:
       image: ubuntu:latest
+    services:
+      redis:
+        image: redis
     steps:
       - run: env
       - run: apt-get update
