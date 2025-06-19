@@ -10,11 +10,11 @@ jobs:
           echo "will sleep for 15"
           sleep 900
 
-  sleep-18-min:
+  sleep-30-min:
     runs-on: sandbox-valen-testing
     container:
       image: ubuntu:latest
     steps:
       - run: |
-          echo "will sleep for 18"
-          sleep 1080
+          echo "will sleep for 30"
+          sleep 1800
