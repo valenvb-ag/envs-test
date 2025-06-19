@@ -1,0 +1,20 @@
+on: push
+
+jobs:
+  15-min-sleep:
+    runs-on: sandbox-valen-testing
+    container:
+      image: ubuntu:latest
+    steps:
+      - run: |
+          echo "will sleep for 15"
+          sleep 900
+
+  18-min-sleep:
+    runs-on: sandbox-valen-testing
+    container:
+      image: ubuntu:latest
+    steps:
+      - run: |
+          echo "will sleep for 18"
+          sleep 1080
