@@ -1,7 +1,7 @@
 on: push
 
 jobs:
-  15-min-sleep:
+  sleep-15-min:
     runs-on: sandbox-valen-testing
     container:
       image: ubuntu:latest
@@ -10,7 +10,7 @@ jobs:
           echo "will sleep for 15"
           sleep 900
 
-  18-min-sleep:
+  sleep-18-min:
     runs-on: sandbox-valen-testing
     container:
       image: ubuntu:latest
