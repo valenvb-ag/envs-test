@@ -16,7 +16,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: valen-sandbox-testing
+    runs-on: sandbox-valen-testing
     container: mcr.microsoft.com/devcontainers/base:ubuntu
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
