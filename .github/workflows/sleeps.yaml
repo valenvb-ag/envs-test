@@ -1,19 +1,31 @@
 on: push
 
 jobs:
-  sleep-15-min:
-    runs-on: sandbox-valen-testing
-    container:
-      image: ubuntu:latest
-    steps:
-      - run: |
-          echo "will sleep for 15"
-          sleep 900
+  # sleep-15-min:
+  #   runs-on: sandbox-valen-testing
+  #   container:
+  #     image: ubuntu:latest
+  #   steps:
+  #     - run: |
+  #         echo "will sleep for 15"
+  #         sleep 900
 
-  sleep-30-min:
+  # sleep-30-min:
+  #   runs-on: sandbox-valen-testing
+  #   container:
+  #     image: ubuntu:latest
+  #   steps:
+  #     - run: |
+  #         echo "will sleep for 30"
+  #         sleep 1800
+
+  priv:
     runs-on: sandbox-valen-testing
     container:
-      image: ubuntu:latest
+      image: alpine:latest
+      options:
+        securityContext:
+          privileged: true
     steps:
       - run: |
           echo "will sleep for 30"
