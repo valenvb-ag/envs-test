@@ -19,6 +19,8 @@ jobs:
     runs-on: sandbox-valen-testing
     container: mcr.microsoft.com/devcontainers/base:ubuntu
     # Steps represent a sequence of tasks that will be executed as part of the job
+    permissions:
+      contents: write
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
