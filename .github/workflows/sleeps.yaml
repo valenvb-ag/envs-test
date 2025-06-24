@@ -2,7 +2,7 @@ on: push
 
 jobs:
   sleep-15-min:
-    runs-on: sandbox-valen-testing
+    runs-on: sandbox-4xlarge
     container:
       image: ubuntu:latest
     steps:
