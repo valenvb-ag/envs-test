@@ -1,0 +1,32 @@
+# This is a basic workflow to help you get started with Actions
+
+name: cache
+
+# Controls when the workflow will run
+on:
+  push:
+        
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  set-cache:
+    # The type of runner that the job will run on
+    runs-on: sandbox-valen-testing
+    container: mcr.microsoft.com/devcontainers/base:ubuntu
+    steps:      
+      - uses: runs-on/cache@v2
+        with:
+          path: test
+          key: 1
+      - run: echo "foo" > test
+  
+  use-cache:
+    # The type of runner that the job will run on
+    runs-on: sandbox-valen-testing
+    container: mcr.microsoft.com/devcontainers/base:ubuntu
+    steps:      
+      - uses: runs-on/cache@v2
+        with:
+          key: 1
+      - run: cat test
