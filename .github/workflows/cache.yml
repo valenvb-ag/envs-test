@@ -20,6 +20,8 @@ jobs:
         with:
           path: test
           key: 1
+        env:
+          RUNS_ON_S3_BUCKET_CACHE: gha-cache-tst
       - run: echo "foo" > test
   
   use-cache:
@@ -32,4 +34,6 @@ jobs:
         with:
           path: test
           key: 1
+        env:
+          RUNS_ON_S3_BUCKET_CACHE: gha-cache-tst
       - run: cat test
