@@ -14,7 +14,8 @@ jobs:
     # The type of runner that the job will run on
     runs-on: sandbox-valen-testing
     container: mcr.microsoft.com/devcontainers/base:ubuntu
-    steps:      
+    steps:
+      - run: env
       - uses: runs-on/cache@v2
         with:
           path: test
@@ -24,9 +25,11 @@ jobs:
   use-cache:
     # The type of runner that the job will run on
     runs-on: sandbox-valen-testing
+    needs: set-cache
     container: mcr.microsoft.com/devcontainers/base:ubuntu
     steps:      
       - uses: runs-on/cache@v2
         with:
+          path: test
           key: 1
       - run: cat test
