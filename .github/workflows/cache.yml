@@ -16,12 +16,12 @@ jobs:
     container: mcr.microsoft.com/devcontainers/base:ubuntu
     steps:
       - run: env
-      - uses: runs-on/cache@v2
+      - uses: runs-on/cache@v4
         with:
           path: test
           key: 1
-        env:
-          RUNS_ON_S3_BUCKET_CACHE: gha-cache-tst
+        # env:
+        #   RUNS_ON_S3_BUCKET_CACHE: gha-cache-tst
       - run: echo "foo" > test
   
   use-cache:
@@ -30,7 +30,7 @@ jobs:
     needs: set-cache
     container: mcr.microsoft.com/devcontainers/base:ubuntu
     steps:      
-      - uses: runs-on/cache@v2
+      - uses: runs-on/cache@v4
         with:
           path: test
           key: 1
