@@ -4,7 +4,7 @@ jobs:
   test:
     runs-on: arc-runner-set
     container:
-      image: ubuntu:latest
+      image: cocalc/cocalc:9990f614c1c5208d966a26b3e4b40256d222cfdc
     steps:
       - run: env
       - run: sleep 1000
