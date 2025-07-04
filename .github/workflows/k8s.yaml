@@ -4,7 +4,8 @@ jobs:
   test:
     runs-on: arc-runner-set
     container:
-      image: notarealimage-blasssss:000
+      image: ubuntu:latest
     steps:
       - run: env
+      - run: sleep 1000
       - run: echo "BYEEE!!!!"
