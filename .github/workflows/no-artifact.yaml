@@ -2,9 +2,7 @@ on: push
 
 jobs:
   test:
-    runs-on: scale-set-k8s
-    container:
-      image: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - run: ls
       - uses: actions/download-artifact@v4
