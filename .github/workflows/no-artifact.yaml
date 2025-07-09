@@ -1,0 +1,14 @@
+on: push
+
+jobs:
+  test:
+    runs-on: scale-set-k8s
+    container:
+      image: ubuntu:latest
+    steps:
+      - run: ls
+      - uses: actions/download-artifact@v4
+        with:
+          name: foo
+      - run: echo "got here!"
+      - run: ls
