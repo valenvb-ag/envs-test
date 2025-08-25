@@ -1,0 +1,25 @@
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  success:
+    runs-on: sandbox-valen-testing
+    container:
+      image: ubuntu:latest
+    steps:
+      - run: echo "SUCCESS!!!"
+  non-zero:
+    runs-on: sandbox-valen-testing
+    container:
+      image: ubuntu:latest
+    steps:
+      - run: echo "Non Zero"
+      - run: exit 1
+  system-failure: # required manually causing this to fail externall
+    runs-on: sandbox-valen-testing
+    container:
+      image: ubuntu:latest
+    steps:
+      - run: sleep 180
+      - run: echo "Should not get here - System Failure"
