@@ -9,6 +9,13 @@ jobs:
       image: ubuntu:latest
     steps:
       - run: echo "SUCCESS!!!"
+  success-with-error:
+    runs-on: sandbox-valen-testing
+    container:
+      image: ubuntu:latest
+    steps:
+      - run: echo "::error title=Error Message::An error message!"
+
   non-zero:
     runs-on: sandbox-valen-testing
     container:
